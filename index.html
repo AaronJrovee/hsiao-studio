@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hsiao Studio | Mobile & Web Games</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 1rem 2rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .game-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .media-container img, .media-container iframe {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border: none;
+        }
+
+        .game-info {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .game-title {
+            font-size: 1.5rem;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .game-description {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            text-align: center;
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            padding: 0.75rem 1.25rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Hsiao Studio</h1>
+        <p>Independent Game & App Development</p>
+    </header>
+
+    <div class="container">
+        <div class="games-grid">
+            
+            <div class="game-card">
+                <div class="media-container">
+                    <img src="https://via.placeholder.com/600x400" alt="Game 1 Screenshot">
+                </div>
+                <div class="game-info">
+                    <h2 class="game-title">Latest Release</h2>
+                    <p class="game-description">An intense action-puzzler where timing is everything. Features over 50 levels and custom music track.</p>
+                    <a href="#" class="btn" target="_blank">Play / Download</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="media-container">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Trailer" allowfullscreen></iframe>
+                </div>
+                <div class="game-info">
+                    <h2 class="game-title">Upcoming Project</h2>
+                    <p class="game-description">Watch the trailer for our next title releasing later this year. Built with Unity.</p>
+                    <a href="#" class="btn" target="_blank">Wishlist Now</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Hsiao Studio. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
