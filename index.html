@@ -3,37 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hsiao Studio | Indie Games</title>
+    <title>Hsiao Studio | Mobile Games</title>
+    <!-- Google Font for blocky/tech headers -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0d1117;
-            --card-bg: #161b22;
-            --accent-color: #58a6ff;
-            --accent-hover: #1f6feb;
+            --bg-color: #090c10;
+            --card-bg: rgba(22, 27, 34, 0.85);
+            --accent-color: #00d4ff;
+            --accent-glow: rgba(0, 212, 255, 0.35);
             --text-color: #f0f6fc;
             --text-muted: #8b949e;
-            --badge-bg: #21262d;
+            --badge-bg: rgba(0, 212, 255, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(0, 212, 255, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(31, 111, 235, 0.08) 0%, transparent 50%);
             color: var(--text-color);
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            min-height: 100vh;
         }
 
         header {
             text-align: center;
-            padding: 4.5rem 1rem 2.5rem;
+            padding: 5rem 1.5rem 3rem;
         }
 
         header h1 {
-            font-size: 2.75rem;
-            margin-bottom: 0.5rem;
-            color: var(--accent-color);
-            letter-spacing: -0.5px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-shadow: 0 0 25px var(--accent-glow);
+            margin: 0 0 0.75rem 0;
         }
 
         header p {
@@ -41,40 +57,44 @@
             font-size: 1.15rem;
             max-width: 600px;
             margin: 0 auto;
+            font-weight: 400;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1050px;
             margin: 0 auto;
-            padding: 1rem 1.5rem 4rem;
+            padding: 1rem 1.5rem 5rem;
         }
 
         .games-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
         }
 
         .game-card {
             background-color: var(--card-bg);
-            border: 1px solid #30363d;
-            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            backdrop-filter: blur(10px);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
         }
 
         .game-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent-color);
+            transform: translateY(-6px);
+            border-color: rgba(0, 212, 255, 0.4);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--accent-glow);
         }
 
         .media-container {
             width: 100%;
-            height: 220px;
+            height: 230px;
             background-color: #010409;
             position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .media-container img, 
@@ -98,10 +118,13 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 0.75rem;
+            gap: 0.5rem;
         }
 
         .game-title {
-            font-size: 1.5rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.35rem;
+            letter-spacing: 0.5px;
             margin: 0;
             color: #ffffff;
         }
@@ -109,43 +132,53 @@
         .status-badge {
             font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding: 0.25rem 0.6rem;
-            border-radius: 20px;
+            letter-spacing: 1px;
+            padding: 0.3rem 0.7rem;
+            border-radius: 6px;
             background-color: var(--badge-bg);
             color: var(--accent-color);
-            border: 1px solid #30363d;
+            border: 1px solid rgba(0, 212, 255, 0.3);
             font-weight: 600;
+            white-space: nowrap;
         }
 
         .game-description {
             color: var(--text-muted);
             font-size: 0.95rem;
             flex-grow: 1;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.75rem;
+            line-height: 1.65;
         }
 
         .btn {
             display: inline-block;
             text-align: center;
             background-color: var(--accent-color);
-            color: #ffffff;
-            padding: 0.75rem 1.25rem;
-            border-radius: 6px;
+            color: #090c10;
+            padding: 0.85rem 1.25rem;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            transition: background-color 0.2s ease;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            transition: all 0.2s ease;
         }
 
         .btn:hover {
-            background-color: var(--accent-hover);
+            background-color: #ffffff;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
         }
 
         .btn.secondary {
             background-color: #21262d;
-            color: var(--text-color);
+            color: var(--text-muted);
             border: 1px solid #30363d;
             cursor: default;
+        }
+
+        .btn.secondary:hover {
+            background-color: #21262d;
+            box-shadow: none;
         }
 
         footer {
@@ -153,13 +186,7 @@
             padding: 3rem 1rem;
             color: var(--text-muted);
             font-size: 0.85rem;
-            border-top: 1px solid #21262d;
-        }
-        .studio-logo {
-            max-width: 140px;
-            height: auto;
-            margin-bottom: 1rem;
-            display: inline-block;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
     </style>
 </head>
@@ -167,7 +194,6 @@
 
     <header>
         <h1>Hsiao Studio</h1>
-        <img src="logo.png" alt="Hsiao Studio Logo" class="studio-logo">
         <p>Creating fun games and apps for mobile.</p>
     </header>
 
@@ -204,7 +230,7 @@
                 <div class="game-info">
                     <div class="header-row">
                         <h2 class="game-title">Waves</h2>
-                        <span class="status-badge">Coming Soon!</span>
+                        <span class="status-badge">Coming Soon</span>
                     </div>
                     <p class="game-description">
                         Waves is a 2D survival game where you dodge incoming waves of a variety of obstacles, including laser beams, giant monsters, and exploding bombs! Complete the levels, destroy bosses, defy all odds, and beat the world record!
