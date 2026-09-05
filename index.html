@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hsiao Studio | Indie Games</title>
-    <!-- Google Font for blocky headers and modern text -->
+    <title>Hsiao Studio | Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
@@ -16,18 +15,11 @@
             --accent-glow: rgba(0, 212, 255, 0.35);
             --text-color: #f0f6fc;
             --text-muted: #8b949e;
-            --badge-bg: rgba(0, 212, 255, 0.1);
             --nav-bg: rgba(9, 12, 16, 0.8);
             --border-color: rgba(255, 255, 255, 0.08);
         }
 
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { box-sizing: border-box; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -40,9 +32,10 @@
             padding: 0;
             line-height: 1.6;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Sticky Navigation Bar */
         .navbar {
             position: sticky;
             top: 0;
@@ -72,9 +65,7 @@
             letter-spacing: 1px;
         }
 
-        .nav-brand span {
-            color: var(--accent-color);
-        }
+        .nav-brand span { color: var(--accent-color); }
 
         .nav-links {
             display: flex;
@@ -92,14 +83,11 @@
             transition: color 0.2s ease;
         }
 
-        .nav-link:hover, .nav-link.active {
-            color: var(--accent-color);
-        }
+        .nav-link:hover, .nav-link.active { color: var(--accent-color); }
 
-        /* Header / Hero Section */
         header {
             text-align: center;
-            padding: 5rem 1.5rem 3rem;
+            padding: 5rem 1.5rem 2.5rem;
         }
 
         header h1 {
@@ -118,157 +106,57 @@
             font-size: 1.15rem;
             max-width: 600px;
             margin: 0 auto;
-            font-weight: 400;
         }
 
-        /* Layout & Content */
         .container {
-            max-width: 1050px;
+            max-width: 800px;
+            width: 100%;
             margin: 0 auto;
             padding: 1rem 1.5rem 5rem;
+            flex: 1;
         }
 
-        .section-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.75rem;
-            margin: 0 0 1.5rem 0;
-            letter-spacing: 1px;
-            color: #ffffff;
-        }
-
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 4rem;
-        }
-
-        .game-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            backdrop-filter: blur(10px);
-            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .game-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(0, 212, 255, 0.4);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--accent-glow);
-        }
-
-        .media-container {
-            width: 100%;
-            height: 230px;
-            background-color: #010409;
-            position: relative;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .media-container img, 
-        .media-container video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border: none;
-            display: block;
-        }
-
-        .game-info {
-            padding: 1.75rem;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .header-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.75rem;
-            gap: 0.5rem;
-        }
-
-        .game-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.35rem;
-            letter-spacing: 0.5px;
-            margin: 0;
-            color: #ffffff;
-        }
-
-        .status-badge {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 0.3rem 0.7rem;
-            border-radius: 6px;
-            background-color: var(--badge-bg);
-            color: var(--accent-color);
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        .game-description {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            flex-grow: 1;
-            margin-bottom: 1.75rem;
-            line-height: 1.65;
-        }
-
-        .btn {
-            display: inline-block;
-            text-align: center;
-            background-color: var(--accent-color);
-            color: #090c10;
-            padding: 0.85rem 1.25rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            letter-spacing: 0.3px;
-            border: none;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .btn:hover {
-            background-color: #ffffff;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-        }
-
-        .btn.secondary {
-            background-color: #21262d;
-            color: var(--text-muted);
-            border: 1px solid #30363d;
-            cursor: default;
-        }
-
-        .btn.secondary:hover {
-            background-color: #21262d;
-            box-shadow: none;
-        }
-
-        /* About Section */
         .info-panel {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 16px;
             padding: 2.5rem;
             backdrop-filter: blur(10px);
-            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.6rem;
+            margin: 0 0 1.25rem 0;
+            color: #ffffff;
         }
 
         .info-panel p {
             color: var(--text-muted);
-            font-size: 1rem;
-            margin: 0;
-            line-height: 1.7;
+            font-size: 1.05rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.75;
+        }
+
+        .info-panel p:last-child { margin-bottom: 0; }
+
+        .btn {
+            display: inline-block;
+            text-align: center;
+            background-color: var(--accent-color);
+            color: #090c10;
+            padding: 0.85rem 1.4rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: 1.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #ffffff;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
         }
 
         footer {
@@ -282,78 +170,33 @@
 </head>
 <body>
 
-    <!-- Sticky Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="./" class="nav-brand">HSIAO<span>STUDIO</span></a>
             <ul class="nav-links">
                 <li><a href="./" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="games/" class="nav-link">Games</a></li>
                 <li><a href="contact/" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero / Title -->
-    <header id="home">
+    <header>
         <h1>Hsiao Studio</h1>
-        <p>Creating fun games and apps for mobile.</p>
+        <p>Independent mobile game development.</p>
     </header>
 
     <main class="container">
-        
-        <!-- Games Grid -->
-        <div class="games-grid">
-            
-            <!-- Game 1: Dial It Up -->
-            <article class="game-card">
-                <div class="media-container">
-                    <img src="feature-graphic.png" alt="Dial It Up Feature Graphic">
-                </div>
-                <div class="game-info">
-                    <div class="header-row">
-                        <h2 class="game-title">Dial It Up</h2>
-                        <span class="status-badge">Available Now</span>
-                    </div>
-                    <p class="game-description">
-                        Dial It Up is a Simon-style memorization game leveled up—it contains a keypad of ten buttons, and it allows you to master digits of famous numbers like pi, e, and the golden ratio, also known as phi!
-                    </p>
-                    <a href="https://play.google.com/store/apps/details?id=io.github.aaronjrovee.twa&hl=en-US" class="btn" target="_blank" rel="noopener noreferrer">
-                        Get on Google Play
-                    </a>
-                </div>
-            </article>
-
-            <!-- Game 2: Waves -->
-            <article class="game-card">
-                <div class="media-container">
-                    <video controls preload="metadata">
-                        <source src="waves-advertisement.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="game-info">
-                    <div class="header-row">
-                        <h2 class="game-title">Waves</h2>
-                        <span class="status-badge">Coming Soon</span>
-                    </div>
-                    <p class="game-description">
-                        Waves is a 2D survival game where you dodge incoming waves of a variety of obstacles, including laser beams, giant monsters, and exploding bombs! Complete the levels, destroy bosses, defy all odds, and beat the world record!
-                    </p>
-                    <a href="#" class="btn secondary">Coming Soon</a>
-                </div>
-            </article>
-
-        </div>
-
-        <!-- About Section -->
-        <section id="about" class="info-panel">
-            <h2 class="section-title">About Hsiao Studio</h2>
+        <section class="info-panel">
+            <h2 class="section-title">About Us</h2>
             <p>
-                Hsiao Studio is an independent development studio dedicated to crafting engaging, fast-paced mobile experiences and reflex-driven gameplay. Every project focuses on tight controls, vibrant design, and replayable challenges.
+                Hsiao Studio is an independent studio focused on crafting fast-paced, reflex-driven mobile games. Every project focuses on minimal clutter, responsive controls, and challenging gameplay.
             </p>
+            <p>
+                Check out our currently released projects and upcoming prototypes in the games catalog.
+            </p>
+            <a href="games/" class="btn">View Games</a>
         </section>
-
     </main>
 
     <footer>
