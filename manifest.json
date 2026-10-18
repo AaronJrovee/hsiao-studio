@@ -1,13 +1,13 @@
 {
   "name": "Hsiao Studio",
-  "short_name": "HsiaoStudio",
-  "start_url": "/",
+  "short_name": "Hsiao Studio",
+  "start_url": "/hsiao-studio/",
   "display": "standalone",
   "background_color": "#090c10",
   "theme_color": "#00d4ff",
   "icons": [
     {
-      "src": "/logo.png",
+      "src": "logo.png",
       "sizes": "192x192 512x512",
       "type": "image/png"
     }
