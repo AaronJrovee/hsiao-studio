@@ -1,0 +1,15 @@
+{
+  "name": "Hsiao Studio",
+  "short_name": "HsiaoStudio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090c10",
+  "theme_color": "#00d4ff",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png"
+    }
+  ]
+}
